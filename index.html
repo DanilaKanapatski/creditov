@@ -5,13 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creditov</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          rel="stylesheet">
+    <script src="header.js"></script>
 </head>
 <body>
 <section class="main">
     <div class="container">
         <div class="main-wrapper">
-            <img class="main-right" src="assets/images/right-1.svg" alt="">
-            <img class="main-left" src="assets/images/left.svg" alt="">
+            <picture class="main-right">
+                <source media="(max-width: 744px)" srcset="assets/images/right-1.2.svg">
+                <source media="(max-width: 1728px)" srcset="assets/images/right-1.1.svg">
+                <img src="assets/images/right-1.svg" alt="Описание изображения">
+            </picture>
+            <picture class="main-left">
+                <source media="(max-width: 744px)" srcset="assets/images/left-2.svg">
+                <source media="(max-width: 1728px)" srcset="assets/images/left-1.svg">
+                <img src="assets/images/left.svg" alt="Описание изображения">
+            </picture>
+            <header class="header-mob">
+                <img class="header-mob__logo" src="assets/images/header-logo.svg" alt="">
+                <div class="header-mob__wrapper"><a href="">
+                    <img src="assets/images/wa.svg" alt="">
+                </a>
+                    <a href="">
+                        <img src="assets/images/tg.svg" alt="">
+                    </a>
+                    <a class="header-mob__btn" href="">Оставить заявку
+                        <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0.5 5.6H12V4.4H0.5V5.6Z"
+                                  fill="white"/>
+                        </svg>
+                    </a>
+                    <div class="header-mob__burger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+                <!-- Меню, которое будет появляться -->
+                <div class="header-mob__menu">
+                    <ul class="header-mob__menu-list">
+                        <li>
+                            <a href="">Услуги</a>
+                        </li>
+                        <li>
+                            <a href="">О нас</a>
+                        </li>
+                        <li>
+                            <a href="">Кейсы</a>
+                        </li>
+                        <li>
+                            <a href="">Контакты</a>
+                        </li>
+                    </ul>
+                    <div class="header-mob__menu-links">
+                        <a href=""><img src="assets/images/tg.svg" alt=""></a><a href=""><img src="assets/images/wa.svg"
+                                                                                              alt=""></a>
+                    </div>
+                    <a class="header-mob__tel" href="tel:+7(999)9999999">+7 (999) 999-99-99</a>
+                </div>
+
+                <!-- Оверлей для закрытия по клику -->
+                <div class="header-mob__overlay"></div>
+            </header>
             <header class="header">
                 <img src="assets/images/header-logo.svg" alt="">
                 <div class="header-wrapper">
@@ -52,15 +112,19 @@
                 <div class="main-links">
                     <a href="">Оставить заявку
                         <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="white" />
-                        </svg></a>
+                            <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z"
+                                  fill="white"/>
+                        </svg>
+                    </a>
                     <a href="">Получить консультацию
                         <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.88735 0.774172L6.28286 4.04199C6.65861 5.26742 5.53139 6.03332 5.102 6.49286C4.75849 6.86049 4.88731 7.25875 4.99466 7.41193C7.03424 10.7819 9.98627 12.0584 11.0061 12.62C11.8219 13.0693 12.2763 12.8413 12.4016 12.6711C12.6878 12.2796 13.3677 11.3844 13.7971 10.935C14.2265 10.4857 14.799 10.6117 15.0316 10.7308C16.0692 11.1563 18.252 12.0992 18.6813 12.4668C19.2181 12.9264 18.9497 13.9476 18.7887 14.5603C18.6277 15.173 17.1785 17.3175 13.5287 16.9601C10.6089 16.6742 7.30264 14.4922 6.01449 13.437C3.7781 11.4967 -0.544386 6.81964 0.0567551 3.63351C0.808181 -0.349141 3.33083 0.00827667 3.92123 0.00827667C4.39356 0.00827667 4.76211 0.518873 4.88735 0.774172Z" fill="#022860" />
-                        </svg></a>
+                            <path d="M4.88735 0.774172L6.28286 4.04199C6.65861 5.26742 5.53139 6.03332 5.102 6.49286C4.75849 6.86049 4.88731 7.25875 4.99466 7.41193C7.03424 10.7819 9.98627 12.0584 11.0061 12.62C11.8219 13.0693 12.2763 12.8413 12.4016 12.6711C12.6878 12.2796 13.3677 11.3844 13.7971 10.935C14.2265 10.4857 14.799 10.6117 15.0316 10.7308C16.0692 11.1563 18.252 12.0992 18.6813 12.4668C19.2181 12.9264 18.9497 13.9476 18.7887 14.5603C18.6277 15.173 17.1785 17.3175 13.5287 16.9601C10.6089 16.6742 7.30264 14.4922 6.01449 13.437C3.7781 11.4967 -0.544386 6.81964 0.0567551 3.63351C0.808181 -0.349141 3.33083 0.00827667 3.92123 0.00827667C4.39356 0.00827667 4.76211 0.518873 4.88735 0.774172Z"
+                                  fill="#022860"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
-    </div>
+        </div>
     </div>
 </section>
 <section class="info">
@@ -68,25 +132,53 @@
         <div class="info-list">
             <div class="info-item-1">
                 <p class="info-list__desc">Кредит физическим лицам до 3 млн ₽ без заработной платы и залога </p>
-                <img src="assets/images/info-1.svg" alt="">
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-1.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-1.1.svg">
+                    <img src="assets/images/info-1.svg" alt="Описание изображения">
+                </picture>
             </div>
             <div class="info-item-2">
                 <p class="info-list__desc">Кредит юридическим лицам до 200 млн ₽ на ИП и ООО</p>
-                <img src="assets/images/info-2.svg" alt="">
-                <img src="assets/images/info-3.svg" alt="">
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-2.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-2.1.svg">
+                    <img src="assets/images/info-2.svg" alt="Описание изображения">
+                </picture>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-3.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-3.1.svg">
+                    <img src="assets/images/info-3.svg" alt="Описание изображения">
+                </picture>
             </div>
             <div class="info-item-3">
                 <p class="info-list__desc">Начните зарабатывать вместе с нами – обучение агентов и посредников</p>
-                <img src="assets/images/info-4.svg" alt="">
-                <img src="assets/images/info-5.svg" alt="">
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-4.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-4.1.svg">
+                    <img src="assets/images/info-4.svg" alt="Описание изображения">
+                </picture>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-5.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-5.1.svg">
+                    <img src="assets/images/info-5.svg" alt="Описание изображения">
+                </picture>
             </div>
             <div class="info-item-4">
                 <p class="info-list__desc">Исправление кредитной истории</p>
-                <img src="assets/images/info-6.svg" alt="">
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-6.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-6.1.svg">
+                    <img src="assets/images/info-6.svg" alt="Описание изображения">
+                </picture>
             </div>
             <div class="info-item-5">
                 <p class="info-list__desc">Одобрение от 1 до 5 дней</p>
-                <img src="assets/images/info-7.svg" alt="">
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/info-7.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/info-7.1.svg">
+                    <img src="assets/images/info-7.svg" alt="Описание изображения">
+                </picture>
             </div>
         </div>
     </div>
@@ -96,43 +188,113 @@
     <div class="container">
         <h2 class="title">Виды кредитования</h2>
 
-    <div class="parts-list">
-        <div class="parts-item-1">
-            <h3 class="parts-list__title">Кредит наличными</h3>
-            <p class="parts-list__desc">Потребительский кредит на любые цели до 5 млн ₽ </p>
-            <img src="assets/images/parts-1.svg" alt="">
+        <div class="parts-list">
+            <div class="parts-item-1">
+                <h3 class="parts-list__title">Кредит наличными</h3>
+                <p class="parts-list__desc">Потребительский кредит на любые цели до 5 млн ₽ </p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5.6L12 5.6V4.4L0 4.4L0 5.6Z"
+                              fill="#022860"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-1.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-1.1.svg">
+                    <img src="assets/images/parts-1.svg" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="parts-item-2">
+                <h3 class="parts-list__title">Автокредит</h3>
+                <p class="parts-list__desc">Целевой кредит под залог автомобиля до 8 млн ₽ </p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-2.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-2.1.svg">
+                    <img src="assets/images/parts-2.svg" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="parts-item-3">
+                <h3 class="parts-list__title">Ипотека</h3>
+                <p class="parts-list__desc">Для покупки недвижимости и строительства дома до 100 млн ₽ </p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-3.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-3.1.svg">
+                    <img src="assets/images/parts-3.svg" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="parts-item-4">
+                <h3 class="parts-list__title">Кредит для ИП</h3>
+                <p class="parts-list__desc">Поможем в получении кредита для ИП до 50 млн ₽</p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5.6L12 5.6V4.4L0 4.4L0 5.6Z"
+                              fill="#022860"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-4.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-4.1.svg">
+                    <img src="assets/images/parts-4.svg" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="parts-item-5">
+                <h3 class="parts-list__title">Фондовое залоговое кредитование</h3>
+                <p class="parts-list__desc">Кредит для ИП и ООО без залога</p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5.6L12 5.6V4.4L0 4.4L0 5.6Z"
+                              fill="#022860"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-5.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-5.1.svg">
+                    <img src="assets/images/parts-5.svg" alt="Описание изображен6я">
+                </picture>
+            </div>
+            <div class="parts-item-6">
+                <h3 class="parts-list__title">Лизинг</h3>
+                <p class="parts-list__desc">Без лимита по финансированию</p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-6.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-6.1.svg">
+                    <img src="assets/images/parts-6.svg" alt="Описание изображения">
+                </picture>
+            </div>
+            <div class="parts-item-7">
+                <h3 class="parts-list__title">Кредит для ООО</h3>
+                <p class="parts-list__desc">Поможем в получении кредита для ООО до 60 млн ₽ </p>
+                <a class="parts-list__link" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5L0 5.6L12 5.6V5V4.4L0 4.4L0 5Z"
+                              fill="white"/>
+                    </svg>
+                </a>
+                <picture>
+                    <source media="(max-width: 744px)" srcset="assets/images/parts-7.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/parts-7.1.svg">
+                    <img src="assets/images/parts-7.svg" alt="Описание изображения">
+                </picture>
+            </div>
         </div>
-        <div class="parts-item-2">
-            <h3 class="parts-list__title">Автокредит</h3>
-            <p class="parts-list__desc">Целевой кредит под залог автомобиля до 8 млн ₽ </p>
-            <img src="assets/images/parts-2.svg" alt="">
-        </div>
-        <div class="parts-item-3">
-            <h3 class="parts-list__title">Ипотека</h3>
-            <p class="parts-list__desc">Для покупки недвижимости и строительства дома до 100 млн ₽ </p>
-            <img src="assets/images/parts-3.svg" alt="">
-        </div>
-        <div class="parts-item-4">
-            <h3 class="parts-list__title">Кредит для ИП</h3>
-            <p class="parts-list__desc">Поможем в получении кредита для ИП до 50 млн ₽</p>
-            <img src="assets/images/parts-4.svg" alt="">
-        </div>
-        <div class="parts-item-5">
-            <h3 class="parts-list__title">Фондовое залоговое кредитование</h3>
-            <p class="parts-list__desc">Кредит для ИП и ООО без залога</p>
-            <img src="assets/images/parts-5.svg" alt="">
-        </div>
-        <div class="parts-item-6">
-            <h3 class="parts-list__title">Лизинг</h3>
-            <p class="parts-list__desc">Без лимита по финансированию</p>
-            <img src="assets/images/parts-6.svg" alt="">
-        </div>
-        <div class="parts-item-7">
-            <h3 class="parts-list__title">Кредит для ООО</h3>
-            <p class="parts-list__desc">Поможем в получении кредита для ООО до 60 млн ₽ </p>
-            <img src="assets/images/parts-7.svg" alt="">
-        </div>
-    </div>
     </div>
 
 </section>
@@ -175,9 +337,26 @@
                     </ul>
                     <div class="calculator-content__numbers-btn">График платежей</div>
                 </div>
+                <div class="calculator-content__numbers-mob">
+                    <div class="calculator-content__numbers-mob__block">
+                        <span>Ежемесячный платеж</span>
+                        <span>999 999 ₽</span>
+                    </div>
+                    <div class="calculator-content__numbers-mob__block">
+                        <span>Переплата по %</span>
+                        <span>9 999 999 999 ₽</span>
+
+                    </div>
+                    <div class="calculator-content__numbers-mob__block">
+                        <span>Эффективная ставка</span>
+                        <span>99,99%</span>
+                    </div>
+                    <div class="calculator-content__numbers-btn">График платежей</div>
+                </div>
                 <a class="calculator-content__link" href="">Оставить заявку
                     <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z" fill="white" />
+                        <path d="M20.7071 8.70711C21.0976 8.31658 21.0976 7.68342 20.7071 7.29289L14.3431 0.928932C13.9526 0.538408 13.3195 0.538408 12.9289 0.928932C12.5384 1.31946 12.5384 1.95262 12.9289 2.34315L18.5858 8L12.9289 13.6569C12.5384 14.0474 12.5384 14.6805 12.9289 15.0711C13.3195 15.4616 13.9526 15.4616 14.3431 15.0711L20.7071 8.70711ZM0 9H20V7H0V9Z"
+                              fill="white"/>
                     </svg>
                 </a>
             </div>
@@ -195,20 +374,62 @@
             <li>
                 <h3 class="services-list__title">Разблокировка счетов</h3>
                 <p class="services-list__desc">Для физических лиц по 115 ФЗ </p>
-                <img class="services-list__img1" src="assets/images/services-1.svg" alt="">
-                <img class="services-list__img2" src="assets/images/services-2.svg" alt="">
+                <a class="consultation-link__tablet" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5.6L12 5.6V4.4L0 4.4L0 5.6Z"
+                              fill="#022860"/>
+                    </svg>
+                </a>
+                <picture class="services-list__img2">
+                    <source media="(max-width: 744px)" srcset="assets/images/services-2.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/services-2.1.svg">
+                    <img src="assets/images/services-2.svg" alt="Описание изображения">
+                </picture>
+                <picture class="services-list__img1">
+                    <source media="(max-width: 744px)" srcset="assets/images/services-1.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/services-1.1.svg">
+                    <img src="assets/images/services-1.svg" alt="Описание изображения">
+                </picture>
             </li>
             <li>
                 <h3 class="services-list__title">Исправление кредитной истории</h3>
                 <p class="services-list__desc">Поможем закрыть просрочки и увеличить рейтинг </p>
-                <img class="services-list__img1" src="assets/images/services-3.svg" alt="">
-                <img class="services-list__img2" src="assets/images/services-4.svg" alt="">
+                <a class="consultation-link__tablet" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5.6L12 5.6V4.4L0 4.4L0 5.6Z"
+                              fill="#022860"/>
+                    </svg>
+                </a>
+                <picture class="services-list__img2">
+                    <source media="(max-width: 744px)" srcset="assets/images/services-4.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/services-4.1.svg">
+                    <img src="assets/images/services-4.svg" alt="Описание изображения">
+                </picture>
+                <picture class="services-list__img1">
+                    <source media="(max-width: 744px)" srcset="assets/images/services-3.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/services-3.1.svg">
+                    <img src="assets/images/services-3.svg" alt="Описание изображения">
+                </picture>
             </li>
             <li>
                 <h3 class="services-list__title">Фондовое залоговое кредитование</h3>
                 <p class="services-list__desc">Кредит для ИП и ООО без залога</p>
-                <img class="services-list__img1" src="assets/images/services-5.svg" alt="">
-                <img class="services-list__img2" src="assets/images/services-6.png" alt="">
+                <a class="consultation-link__tablet" href="">Подробнее
+                    <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0 5.6L12 5.6V4.4L0 4.4L0 5.6Z"
+                              fill="#022860"/>
+                    </svg>
+                </a>
+                <picture class="services-list__img1">
+                    <source media="(max-width: 744px)" srcset="assets/images/services-5.2.svg">
+                    <source media="(max-width: 1728px)" srcset="assets/images/services-5.1.svg">
+                    <img src="assets/images/services-5.svg" alt="Описание изображения">
+                </picture>
+                <picture class="services-list__img2">
+                    <source media="(max-width: 744px)" srcset="assets/images/services-6.2.png">
+                    <source media="(max-width: 1728px)" srcset="assets/images/services-6.1.png">
+                    <img src="assets/images/services-6.png" alt="Описание изображения">
+                </picture>
             </li>
             <li>
                 <h3 class="services-list__title">Обучение<br> агентов и посредников</h3>
@@ -228,7 +449,11 @@
                           fill="#3CAFF1"/>
                 </svg>
             </a>
-            <img class="consultation-img" src="assets/images/services-8.svg" alt="">
+            <picture class="consultation-img">
+                <source media="(max-width: 744px)" srcset="assets/images/services-8.2.svg">
+                <source media="(max-width: 1728px)" srcset="assets/images/services-8.1.svg">
+                <img src="assets/images/services-8.svg" alt="Описание изображения">
+            </picture>
             <ul class="consultation-list">
                 <li>
                     <img src="assets/images/services-9.png" alt="">
@@ -284,27 +509,52 @@
                 <img src="assets/images/about-4.png" alt="">
             </li>
         </ul>
+        <ul class="about-list__mob">
+            <li>
+                <h3 class="about-list__title">10+ лет</h3>
+                <p class="about-list__desc">опыт наших сотрудников в финансовой сфере</p>
+                <img src="assets/images/about-2.png" alt="">
+            </li>
+
+            <li>
+                <h3 class="about-list__title">5+ лет</h3>
+                <p class="about-list__desc">помогаем в одобрении кредитов</p>
+                <img src="assets/images/about-4.png" alt="">
+            </li>
+            <li>
+                <h3 class="about-list__title">1,2 млрд</h3>
+                <p class="about-list__desc">составляет сумма выданных кредитов за 2024 год</p>
+                <img src="assets/images/about-3.png" alt="">
+                <img src="assets/images/about-3.1.png" alt="">
+            </li>
+        </ul>
     </div>
 </section>
 <section class="partners">
-    <h2 class="title">Партнеры</h2>
-    <ul class="partners-list">
-        <li><img src="assets/images/partners-1.svg" alt=""></li>
-        <li><img src="assets/images/partners-2.svg" alt=""></li>
-        <li><img src="assets/images/partners-3.svg" alt=""></li>
-        <li><img src="assets/images/partners-4.svg" alt=""></li>
-        <li><img src="assets/images/partners-5.svg" alt=""></li>
-        <li><img src="assets/images/partners-6.svg" alt=""></li>
-        <li><img src="assets/images/partners-7.svg" alt=""></li>
-        <li><img src="assets/images/partners-8.svg" alt=""></li>
-        <li><img src="assets/images/partners-9.svg" alt=""></li>
-    </ul>
+    <div class="container">
+        <h2 class="title">Партнеры</h2>
+        <ul class="partners-list">
+            <li><img src="assets/images/partners-1.svg" alt=""></li>
+            <li><img src="assets/images/partners-2.svg" alt=""></li>
+            <li><img src="assets/images/partners-3.svg" alt=""></li>
+            <li><img src="assets/images/partners-4.svg" alt=""></li>
+            <li><img src="assets/images/partners-5.svg" alt=""></li>
+            <li><img src="assets/images/partners-6.svg" alt=""></li>
+            <li><img src="assets/images/partners-7.svg" alt=""></li>
+            <li><img src="assets/images/partners-8.svg" alt=""></li>
+            <li><img src="assets/images/partners-9.svg" alt=""></li>
+        </ul>
+    </div>
 </section>
 <section class="cases">
     <div class="container">
         <h2 class="title">Кейсы</h2>
         <div class="cases-wrapper">
-            <img src="assets/images/cases-1.png" alt="">
+            <picture>
+                <source media="(max-width: 744px)" srcset="assets/images/cases-1.2.svg">
+                <source media="(max-width: 1728px)" srcset="assets/images/cases-1.1.svg">
+                <img src="assets/images/cases-1.png" alt="Описание изображения">
+            </picture>
             <div class="cases-info">
                 <p class="cases-info__desc">Выдали 44 млн ₽ на ООО </p>
                 <h3 class="cases-info__subtitle">Изначально у клиентки были:</h3>
@@ -345,7 +595,7 @@
 <footer class="footer">
     <div class="container">
         <div class="footer-wrapper">
-            <img src="assets/images/footer-logo.svg" alt="">
+            <img class="footer-logo" src="assets/images/footer-logo.svg" alt="">
             <div>
                 <h3 class="footer-title">Виды кредитования</h3>
                 <ul class="footer-list">
@@ -367,7 +617,7 @@
                     <li>Обучение агентов и посредников</li>
                 </ul>
             </div>
-            <div>
+            <div class="footer-info">
                 <div class="footer-contacts__links"><a href="">
                     <img src="assets/images/wa.svg" alt="">
                 </a>
@@ -383,6 +633,51 @@
                 </ul>
             </div>
         </div>
+    </div>
+</footer>
+
+<footer class="footer-mob">
+    <div class="container">
+        <div class="footer-mob__contacts">
+            <img src="assets/images/footer-logo-1.svg" alt="">
+            <div class="footer-contacts__links">
+                <a href="">
+                    <img src="assets/images/wa.svg" alt="">
+                </a>
+                <a href="">
+                    <img src="assets/images/tg.svg" alt="">
+                </a>
+            </div>
+            <a class="footer-mob__tel" href="tel:+7(999)9999999">+7 (999) 999-99-99</a></div>
+        <div class="footer-mob__wrapper">
+            <div>
+                <h3 class="footer-title">Виды кредитования</h3>
+                <ul class="footer-list">
+                    <li>Потребительский кредит</li>
+                    <li>Автокредит</li>
+                    <li>Кредит для ИП</li>
+                    <li>Кредит для ООО</li>
+                    <li>Кредит для ООО</li>
+                    <li>Фонт зонт</li>
+                    <li>Лизинг</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="footer-title">Специальные услуги</h3>
+                <ul class="footer-list">
+                    <li>Разблокировка счетов</li>
+                    <li>Исправление кредитной истории</li>
+                    <li>Фонт зонт для юридических лиц</li>
+                    <li>Обучение агентов и посредников</li>
+                </ul>
+            </div>
+        </div>
+        <ul class="footer-contacts__list">
+            <li>ИНН 999999999999</li>
+            <li>Политика конфиденциальности</li>
+            <li>ОГРН 999999999999999</li>
+            <li>Согласие на обработку персональных данных</li>
+        </ul>
     </div>
 </footer>
 </body>
