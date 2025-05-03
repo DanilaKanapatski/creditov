@@ -179,7 +179,7 @@ ul {
     letter-spacing: -0.02em;
     text-align: center;
     background: linear-gradient(180deg, #487eff 0%, #6bb0ff 100%);
-    padding: 14px 40px;
+    padding: 14px 38px;
     border-radius: 27px;
     width: 266px;
     color: #fff;
@@ -197,7 +197,7 @@ ul {
     color: #022860;
     border: 1px solid #022860;
     border-radius: 27px;
-    padding: 14px 40px;
+    padding: 14px 38px;
     width: 339px;
 }
 
@@ -717,7 +717,7 @@ ul {
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
-    padding: 14px 40px;
+    padding: 14px 38px;
     background: linear-gradient(180deg, #487eff 0%, #6bb0ff 100%);
     border-radius: 27px;
     display: flex;
@@ -725,6 +725,18 @@ ul {
     align-items: center;
     width: 266px;
 }
+
+.calculator-content__link:hover {
+    background: linear-gradient(180deg, #6bb0ff 0%, #487eff 100%);
+    gap: 15px;
+    padding: 14px 35px;
+
+}
+
+.calculator-content__numbers-mob {
+    display: none;
+}
+
 
 /*services*/
 
@@ -850,8 +862,10 @@ ul {
     font-size: 20px;
     line-height: 110%;
     letter-spacing: -0.02em;
-    padding: 14px 40px;
+    padding: 14px 30px;
     display: flex;
+    align-items: center;
+    /*justify-content: center;*/
     gap: 10px;
     width: 266px;
     margin-top: 51px;
@@ -859,6 +873,15 @@ ul {
     color: #5b99ff;
     border-radius: 27px;
     background: linear-gradient(92deg, #f0f9ff 0%, #fff 100%);
+}
+
+.services-list__link:hover {
+    color: #4e91ff;
+gap: 15px;
+}
+
+.services-list__link:hover path {
+    fill: #4e91ff;
 }
 
 .consultation {
@@ -907,6 +930,14 @@ ul {
     border-radius: 27px;
     width: 339px;
     padding: 14px 40px;
+}
+
+.consultation-link:hover {
+    color: #5b99ff;
+}
+
+.consultation-link:hover path {
+    fill: #5b99ff;
 }
 
 .consultation-link__tablet {
@@ -1041,6 +1072,10 @@ ul {
     color: #fff;
 }
 
+.about-list__mob {
+    display: none;
+}
+
 /*partners*/
 
 .partners {
@@ -1115,10 +1150,45 @@ ul {
     box-shadow: 0 0 20px 0 rgba(74, 122, 178, 0.2);
     background: #f7fcff;
     gap: 30px;
+    position: relative;
 }
 
 .cases-info {
     margin-top: 30px;
+}
+
+.cases-pagination {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.cases-btn__next {
+    box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #cceaff;
+    background: #cceaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.cases-btn__prev {
+    box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 15px;
+    border: 1px solid #cceaff;
+    background: #f7fcff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
 .cases-info__desc {
@@ -1201,6 +1271,10 @@ ul {
     color: #fff;
 }
 
+.contacts-form {
+    margin-top: 40px;
+}
+
 .contacts-form input {
     font-family: Inter, sans-serif;
     margin-top: 10px;
@@ -1258,6 +1332,10 @@ ul {
     align-items: center;
 }
 
+.contacts-button:hover {
+    gap: 15px;
+}
+
 .contacts-text {
     margin-top: 20px;
     font-weight: 300;
@@ -1293,6 +1371,10 @@ ul {
 
 /*footer*/
 
+.footer-mob {
+    display: none;
+}
+
 .footer {
     background: #c8e3ff;
     margin-top: 30px;
@@ -1319,12 +1401,16 @@ ul {
     gap: 10px;
     margin-top: 20px;
 
-    li {
+    li a {
         font-weight: 400;
         font-size: 14px;
         line-height: 110%;
         letter-spacing: -0.02em;
         color: #022860;
+    }
+
+    li a:hover {
+      color: #5b99ff;
     }
 }
 
@@ -1575,7 +1661,7 @@ ul {
 
     .main-links a:nth-child(2) {
         font-size: 17px;
-        padding: 13px 36px;
+        padding: 13px 34px;
         width: 299px;
     }
 
@@ -2177,6 +2263,12 @@ ul {
 
     /*cases*/
 
+    .cases-pagination {
+        bottom: auto;
+        top: -87px;
+        right: 0;
+    }
+
     .cases {
         margin-top: 90px;
     }
@@ -2215,6 +2307,10 @@ ul {
     }
 
     /*contacts*/
+
+    .contacts-form {
+        margin-top: 20px;
+    }
 
     .contacts {
         margin-top: 50px;
@@ -3028,6 +3124,23 @@ ul {
 
     /*cases*/
 
+    .cases-pagination {
+        top: auto;
+        bottom: -50px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .cases-btn__prev {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cases-btn__next {
+        width: 40px;
+        height: 40px;
+    }
+
     .cases-wrapper {
         margin-top: 30px;
         padding: 30px 15px 15px 15px;
@@ -3063,7 +3176,7 @@ ul {
     /*contacts*/
 
     .contacts {
-        margin-top: 40px;
+        margin-top: 90px;
     }
 
     .contacts-wrapper {
@@ -3138,6 +3251,7 @@ ul {
     }
 
     .footer-mob {
+        display: block;
         background: #c8e3ff;
         margin-top: 20px;
         padding: 15px 0 30px;
@@ -3167,6 +3281,10 @@ ul {
 
     .footer-list {
         margin-top: 10px;
+    }
+
+    .footer-list li a {
+        font-size: 12px;
     }
 
     .footer-mob__wrapper {
