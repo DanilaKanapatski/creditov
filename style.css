@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Inter, sans-serif;
     background: #edf6ff;
@@ -52,6 +56,7 @@ ul {
 .header-wrapper {
     display: flex;
     gap: 184px;
+    align-items: center;
 }
 
 .header-nav {
@@ -73,9 +78,13 @@ ul {
         letter-spacing: -0.02em;
         text-align: center;
         color: #001b42;
+        transition: all 0.3s ease; /* Добавлено для плавности */
+
     }
 
     a:hover {
+        transition: all 0.3s ease; /* Добавлено для плавности */
+
         color: #5b99ff;
     }
 }
@@ -102,6 +111,7 @@ ul {
     font-weight: 500;
     font-size: 16px;
     line-height: 110%;
+    box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
@@ -110,7 +120,16 @@ ul {
     gap: 10px;
     align-items: center;
     z-index: 2;
+cursor: pointer;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+}
 
+.header-links a:nth-child(4):hover {
+    transition: all 0.3s ease; /* Добавлено для плавности */
+    gap: 15px;
+    padding: 11px 15px 11px 20px;
+    background: linear-gradient(180deg, #6bb0ff 0%, #487eff 100%);
+    box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
 }
 .main {
     margin-top: 20px;
@@ -142,12 +161,16 @@ ul {
 
 .main-title {
     margin-top: 37px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 100px;
     line-height: 110%;
     letter-spacing: -0.02em;
     text-align: center;
     color: #022860;
+}
+
+.main-desc__mob {
+    display: none;
 }
 
 .main-desc {
@@ -179,10 +202,21 @@ ul {
     letter-spacing: -0.02em;
     text-align: center;
     background: linear-gradient(180deg, #487eff 0%, #6bb0ff 100%);
-    padding: 14px 38px;
+    padding: 14px 35px 14px 40px;
     border-radius: 27px;
     width: 266px;
     color: #fff;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+
+}
+
+.main-links a:nth-child(1):hover {
+    box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
+    padding: 14px 30px 14px 40px;
+
+    background: linear-gradient(180deg, #6bb0ff 0%, #487eff 100%);
+    transition: all 0.3s ease; /* Добавлено для плавности */
+    gap: 15px;
 }
 
 .main-links a:nth-child(2) {
@@ -199,13 +233,32 @@ ul {
     border-radius: 27px;
     padding: 14px 38px;
     width: 339px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    path {
+        transition: all 0.3s ease; /* Добавлено для плавности */
+
+    }
 }
+
+.main-links a:nth-child(2):hover {
+    transition: all 0.3s ease; /* Добавлено для плавности */
+    border: 1px solid #5b99ff;
+    color: #5b99ff;
+
+    path {
+        transition: all 0.3s ease; /* Добавлено для плавности */
+        fill: #5b99ff;
+    }
+}
+
 
 
 /*info*/
 
 .info {
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 .info-list {
@@ -228,7 +281,7 @@ ul {
 }
 
 .info-list__desc {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 25px;
     line-height: 110%;
     letter-spacing: -0.02em;
@@ -258,6 +311,7 @@ ul {
 
     p {
         color: #022860;
+        max-width: 254px;
     }
 
     picture img {
@@ -424,7 +478,7 @@ ul {
     }
 
     p {
-        max-width: 190px;
+        max-width: 200px;
     }
 
     img {
@@ -484,7 +538,7 @@ ul {
     z-index: 3;
 
     p {
-        max-width: 213px;
+        max-width: 233px;
     }
 
     img {
@@ -524,7 +578,7 @@ ul {
 
     p {
         color: white;
-        max-width: 103px;
+        max-width: 133px;
 
     }
 
@@ -717,19 +771,23 @@ ul {
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
-    padding: 14px 38px;
+    padding: 14px 35px 14px 40px;
     background: linear-gradient(180deg, #487eff 0%, #6bb0ff 100%);
     border-radius: 27px;
     display: flex;
     gap: 10px;
     align-items: center;
     width: 266px;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+
 }
 
 .calculator-content__link:hover {
     background: linear-gradient(180deg, #6bb0ff 0%, #487eff 100%);
     gap: 15px;
-    padding: 14px 35px;
+    padding: 14px 30px 14px 40px;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+
 
 }
 
@@ -848,7 +906,7 @@ ul {
 }
 
 .services-list__desc {
-    max-width: 166px;
+    max-width: 176px;
     font-weight: 400;
     font-size: 16px;
     line-height: 110%;
@@ -953,7 +1011,8 @@ gap: 15px;
 
 .consultation-list {
     position: absolute;
-    top: 46px;
+    top: 50%;
+    transform: translateY(-50%);
     right: 56px;
     display: flex;
     gap: 15px;
@@ -1065,7 +1124,7 @@ gap: 15px;
 }
 
 .about-list__title {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 40px;
     line-height: 110%;
     letter-spacing: -0.02em;
@@ -1285,7 +1344,7 @@ gap: 15px;
     border: 1px solid #d2dbe2;
     border-radius: 15px;
     background: #f9fcff;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 18px;
     line-height: 110%;
     letter-spacing: -0.02em;
@@ -1303,7 +1362,7 @@ gap: 15px;
     border: 1px solid #d2dbe2;
     border-radius: 15px;
     background: #f9fcff;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 18px;
     line-height: 110%;
     letter-spacing: -0.02em;
@@ -1407,10 +1466,14 @@ gap: 15px;
         line-height: 110%;
         letter-spacing: -0.02em;
         color: #022860;
+        transition: all 0.3s ease; /* Добавлено для плавности */
+
     }
 
     li a:hover {
       color: #5b99ff;
+        transition: all 0.3s ease; /* Добавлено для плавности */
+
     }
 }
 
@@ -1427,6 +1490,14 @@ gap: 15px;
         letter-spacing: -0.02em;
         text-align: right;
         color: #5f8aa9;
+        transition: all 0.3s ease; /* Добавлено для плавности */
+        cursor: pointer;
+    }
+
+    li:hover {
+        color: #5b99ff;
+        transition: all 0.3s ease; /* Добавлено для плавности */
+
     }
 }
 
@@ -1448,12 +1519,22 @@ gap: 15px;
     justify-content: end;
 }
 
+.header-mob {
+    display: none;
+}
+
+
 @media screen and (max-width: 1728px) {
 
     .container {
         max-width: 744px;
         padding: 0 10px;
     }
+
+    body.menu-open {
+        overflow: hidden; /* Блокируем скролл при открытом меню */
+    }
+
 
     .title {
         font-size: 40px;
@@ -1462,22 +1543,25 @@ gap: 15px;
     /*main*/
 
     .header {
-     display: none;
+        display: none;
     }
 
     .header-mob__logo {
         width: 90px;
+        flex-shrink: 0;
     }
 
+    /* Меню (полностью скрыто) */
     .header-mob__menu {
         position: fixed;
-        top: 0;
-        z-index: 1000;
-        right: -285px;
+        top: -22px;
+        right: -300px;
         width: 285px;
         height: 100vh;
         background: #edf6ff;
-        transition: right 0.3s ease;
+        transition: transform 0.3s ease;
+        z-index: 1003; /* Выше всего */
+        visibility: hidden; /* Полностью скрыто */
     }
 
     .header-mob__menu-list {
@@ -1518,11 +1602,8 @@ gap: 15px;
         padding-left: 30px;
     }
 
-    .header-mob__menu.active {
-        right: 0;
-    }
-
-    .header-mob__overlay {
+    /* Оверлей для всего контента */
+    .menu-overlay {
         position: fixed;
         top: 0;
         left: 0;
@@ -1531,12 +1612,22 @@ gap: 15px;
         background: #011739;
         opacity: 0;
         visibility: hidden;
-        transition: opacity 0.3s, visibility 0.3s;
-        z-index: 999;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000;
     }
 
-    .header-mob__overlay.active {
+    /* Активные состояния */
+    body.menu-open .header-mob {
+        background: rgba(255, 255, 255, 0.3); /* Хедер затемняется */
+    }
+
+    body.menu-open .menu-overlay {
         opacity: 0.5;
+        visibility: visible;
+    }
+
+    body.menu-open .header-mob__menu {
+        transform: translateX(-285px);
         visibility: visible;
     }
 
@@ -1545,20 +1636,54 @@ gap: 15px;
     }
 
     .header-mob {
-
-        z-index: 100;
-        margin: 0;
+        z-index: 1001;
+        margin: 0 auto;
         max-width: 704px;
-        width: 100%;
+        width: calc(100% - 20px);
         display: flex;
         justify-content: space-between;
         align-items: center;
         position: fixed;
+        top: 21px;
+        left: 50%;
+        transform: translateX(-50%);
         box-shadow: 0 0 10px 0 rgba(74, 122, 178, 0.2);
         background: rgba(255, 255, 255, 0.6);
         border: 1px solid #e4f4ff;
         border-radius: 15px;
         padding: 10px 10px 10px 14px;
+        box-sizing: border-box;
+        transition: background 0.3s ease; /* Для плавного затемнения хедера */
+    }
+
+    .header-mob__wrapper {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        /* Добавляем автоматический отступ слева */
+        margin-left: auto;
+        /* Запрещаем сжимание */
+        flex-shrink: 0;
+    }
+
+    .header-mob__wrapper a:nth-child(1) img{
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-mob__wrapper a:nth-child(2) img{
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-mob__wrapper a:nth-child(1){
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-mob__wrapper a:nth-child(2){
+        width: 35px;
+        height: 35px;
     }
 
     .header-mob__wrapper {
@@ -1592,6 +1717,7 @@ gap: 15px;
         flex-direction: column;
         gap: 3px;
         align-items: center;
+        box-shadow: 0 0 9px 0 rgba(72, 126, 255, 0.2);
         justify-content: center;
 
         span {
@@ -1698,6 +1824,10 @@ gap: 15px;
             right: 0;
             transform: none;
         }
+
+        p {
+            max-width: 280px;
+        }
     }
 
     .info-item-2 {
@@ -1722,6 +1852,7 @@ gap: 15px;
         p {
             z-index: 4;
             position: relative;
+            max-width: 350px;
         }
     }
 
@@ -1729,7 +1860,7 @@ gap: 15px;
         grid-column: 1 / span 2;
 
         p {
-            max-width: 303px;
+            max-width: 293px;
         }
 
         picture img {
@@ -1819,7 +1950,7 @@ gap: 15px;
 
         p {
             color: white;
-            max-width: 172px;
+            max-width: 192px;
         }
 
         img {
@@ -1839,7 +1970,7 @@ gap: 15px;
         background: linear-gradient(134deg, #489afd 0%, #53cefe 100%);
 
         p {
-            max-width: 213px;
+            max-width: 233px;
         }
 
         img {
@@ -2052,6 +2183,10 @@ gap: 15px;
                 left: auto;
                 right: 0;
             }
+
+            .services-list__desc {
+                max-width: 202px;
+            }
         }
 
         li:nth-child(2) {
@@ -2101,6 +2236,7 @@ gap: 15px;
 
             .services-list__desc {
                 color: #fff;
+                max-width: 159px;
             }
 
             .services-list__img2 {
@@ -2145,7 +2281,7 @@ gap: 15px;
     .consultation-desc {
         font-size: 16px;
         margin-top: 20px;
-        max-width: 463px;
+        max-width: 458px;
     }
 
     .consultation-link {
@@ -2349,6 +2485,7 @@ gap: 15px;
     }
 
     .contacts-button {
+        justify-content: center;
         max-width: 327px;
         font-size: 17px;
         padding: 13px 41px;
@@ -2409,7 +2546,7 @@ gap: 15px;
         gap: 5px;
         margin-top: 5px;
 
-        li {
+        li a {
             font-size: 12px;
         }
     }
@@ -2505,8 +2642,18 @@ gap: 15px;
         font-size: 55px;
     }
 
-    .main-desc {
+    .main-desc{
+        display: none;
+    }
+
+    .main-desc__mob {
+        display: block;
+        font-weight: 500;
         font-size: 15px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        text-align: center;
+        color: #001b42;
         margin: 16px auto 0;
         max-width: 294px;
     }
@@ -2567,6 +2714,10 @@ gap: 15px;
             transform: translateX(-50%);
             right: 0;
         }
+
+        p {
+            max-width: 143px;
+        }
     }
 
     .info-item-2 {
@@ -2606,6 +2757,10 @@ gap: 15px;
     }
 
     .info-item-4 {
+
+        p {
+            max-width: 134px;
+        }
 
         picture img {
             left: 50%;

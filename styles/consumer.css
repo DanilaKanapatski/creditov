@@ -48,6 +48,10 @@
     margin-top: 30px;
 }
 
+.aside-list .active a {
+    color: #5B99FF;
+}
+
 .content-text {
     padding: 0 30px 83px 30px;
 }
@@ -130,12 +134,20 @@
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
-    padding: 14px 34px 14px 40px;
+    padding: 14px 35px 14px 40px;
     border-radius: 27px;
     width: 266px;
     border: none;
     box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
     background: linear-gradient(180deg, #487eff 0%, #6bb0ff 100%);
+    cursor: pointer;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+}
+
+.content-btn:hover {
+    background: linear-gradient(180deg, #6bb0ff 0%, #487eff 100%);
+    gap: 15px;
+    transition: all 0.3s ease; /* Добавлено для плавности */
 }
 
 .content-desc {
@@ -165,6 +177,23 @@
     letter-spacing: -0.02em;
     text-align: center;
     color: #022860;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+
+    path {
+        transition: all 0.3s ease; /* Добавлено для плавности */
+    }
+
+}
+
+.content-link:hover {
+    border: 1px solid #5b99ff;
+    color: #5b99ff;
+    transition: all 0.3s ease; /* Добавлено для плавности */
+
+    path {
+        fill: #5b99ff;
+        transition: all 0.3s ease; /* Добавлено для плавности */
+    }
 }
 
 .content-dop {
@@ -178,7 +207,7 @@
     }
 
     .main-content {
-        margin-top: 80px;
+        margin-top: 85px;
         display: flex;
         gap: 20px;
     }
@@ -186,7 +215,6 @@
     .aside {
         display: none;
     }
-
 
 
     .content-text {

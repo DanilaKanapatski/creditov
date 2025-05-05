@@ -12,6 +12,55 @@
     <script src="header.js"></script>
 </head>
 <body>
+<div class="menu-overlay"></div>
+<header class="header-mob">
+    <img class="header-mob__logo" src="assets/images/header-logo.svg" alt="">
+    <div class="header-mob__wrapper"><a href="">
+        <img src="assets/images/wa.svg" alt="">
+    </a>
+        <a href="">
+            <img src="assets/images/tg.svg" alt="">
+        </a>
+        <a class="header-mob__btn" href="">Оставить заявку
+            <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0.5 5.6H12V4.4H0.5V5.6Z"
+                      fill="white"/>
+            </svg>
+        </a>
+        <div class="header-mob__burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Меню, которое будет появляться -->
+    <div class="header-mob__menu">
+        <ul class="header-mob__menu-list">
+            <li>
+                <a href="#services">Услуги</a>
+            </li>
+            <li>
+                <a href="#about">О нас</a>
+            </li>
+            <li>
+                <a href="#cases">Кейсы</a>
+            </li>
+            <li>
+                <a href="#contacts">Контакты</a>
+            </li>
+        </ul>
+        <div class="header-mob__menu-links">
+            <a href=""><img src="assets/images/tg.svg" alt=""></a><a href=""><img src="assets/images/wa.svg"
+                                                                                  alt=""></a>
+        </div>
+        <a class="header-mob__tel" href="tel:+7(999)9999999">+7 (999) 999-99-99</a>
+    </div>
+
+    <!-- Оверлей для закрытия по клику -->
+    <div class="header-mob__overlay"></div>
+</header>
+
 <section class="main">
     <div class="container">
         <div class="main-wrapper">
@@ -25,69 +74,22 @@
                 <source media="(max-width: 1728px)" srcset="assets/images/left-1.svg">
                 <img src="assets/images/left.svg" alt="Описание изображения">
             </picture>
-            <header class="header-mob">
-                <img class="header-mob__logo" src="assets/images/header-logo.svg" alt="">
-                <div class="header-mob__wrapper"><a href="">
-                    <img src="assets/images/wa.svg" alt="">
-                </a>
-                    <a href="">
-                        <img src="assets/images/tg.svg" alt="">
-                    </a>
-                    <a class="header-mob__btn" href="">Оставить заявку
-                        <svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12.4243 5.42426C12.6586 5.18995 12.6586 4.81005 12.4243 4.57574L8.60589 0.757359C8.37157 0.523045 7.99167 0.523045 7.75736 0.757359C7.52304 0.991674 7.52304 1.37157 7.75736 1.60589L11.1515 5L7.75736 8.39411C7.52304 8.62843 7.52304 9.00833 7.75736 9.24264C7.99167 9.47696 8.37157 9.47696 8.60589 9.24264L12.4243 5.42426ZM0.5 5.6H12V4.4H0.5V5.6Z"
-                                  fill="white"/>
-                        </svg>
-                    </a>
-                    <div class="header-mob__burger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-
-                <!-- Меню, которое будет появляться -->
-                <div class="header-mob__menu">
-                    <ul class="header-mob__menu-list">
-                        <li>
-                            <a href="">Услуги</a>
-                        </li>
-                        <li>
-                            <a href="">О нас</a>
-                        </li>
-                        <li>
-                            <a href="">Кейсы</a>
-                        </li>
-                        <li>
-                            <a href="">Контакты</a>
-                        </li>
-                    </ul>
-                    <div class="header-mob__menu-links">
-                        <a href=""><img src="assets/images/tg.svg" alt=""></a><a href=""><img src="assets/images/wa.svg"
-                                                                                              alt=""></a>
-                    </div>
-                    <a class="header-mob__tel" href="tel:+7(999)9999999">+7 (999) 999-99-99</a>
-                </div>
-
-                <!-- Оверлей для закрытия по клику -->
-                <div class="header-mob__overlay"></div>
-            </header>
             <header class="header">
                 <img src="assets/images/header-logo.svg" alt="">
                 <div class="header-wrapper">
                     <nav>
                         <ul class="header-nav">
                             <li>
-                                <a href="">Услуги</a>
+                                <a href="#services">Услуги</a>
                             </li>
                             <li>
-                                <a href="">О нас</a>
+                                <a href="#about">О нас</a>
                             </li>
                             <li>
-                                <a href="">Кейсы</a>
+                                <a href="#cases">Кейсы</a>
                             </li>
                             <li>
-                                <a href="">Контакты</a>
+                                <a href="#contacts">Контакты</a>
                             </li>
                         </ul>
                     </nav>
@@ -107,7 +109,10 @@
             </header>
             <div>
                 <h1 class="main-title">Creditov</h1>
-                <p class="main-desc">Поможем получить кредит от 1 до 200 млн по ставке от 19% даже при сложной кредитной
+                <p class="main-desc">Поможем получить кредит от 1 до 200 млн<br> по ставке от 19% даже при сложной кредитной
+                    истории</p>
+
+                <p class="main-desc__mob">Поможем получить кредит<br> от 1 до 200 млн по ставке от 19% даже при сложной кредитной
                     истории</p>
                 <div class="main-links">
                     <a href="">Оставить заявку
@@ -367,7 +372,7 @@
         </div>
     </div>
 </section>
-<section class="services">
+<section class="services" id="services">
     <div class="container">
         <h2 class="title">Специальные услуги</h2>
         <ul class="services-list">
@@ -489,7 +494,7 @@
         </div>
     </div>
 </section>
-<section class="about">
+<section class="about" id="about">
     <div class="container">
         <img class="about-img" src="assets/images/about-1.svg" alt="">
         <h2 class="title">Creditov – это ваш надежный партнер в сфере кредитования, который помогает найти оптимальные
@@ -548,7 +553,7 @@
         </ul>
     </div>
 </section>
-<section class="cases">
+<section class="cases" id="cases">
     <div class="container">
         <h2 class="title">Кейсы</h2>
         <div class="cases-wrapper">
@@ -587,7 +592,7 @@
         </div>
     </div>
 </section>
-<section class="contacts">
+<section class="contacts" id="contacts">
     <div class="container">
         <div class="contacts-wrapper">
             <h2 class="contacts-title">Начнем сотрудничество? </h2>
