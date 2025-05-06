@@ -119,7 +119,8 @@ ul {
     display: flex;
     gap: 10px;
     align-items: center;
-    z-index: 2;
+    z-index: 10;
+    position: relative;
 cursor: pointer;
     transition: all 0.3s ease; /* Добавлено для плавности */
 }
@@ -185,6 +186,8 @@ cursor: pointer;
 }
 
 .main-links {
+    z-index: 10;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,7 +215,7 @@ cursor: pointer;
 
 .main-links a:nth-child(1):hover {
     box-shadow: 0 0 10px 0 rgba(72, 126, 255, 0.2);
-    padding: 14px 30px 14px 40px;
+    padding: 14px 29px 14px 40px;
 
     background: linear-gradient(180deg, #6bb0ff 0%, #487eff 100%);
     transition: all 0.3s ease; /* Добавлено для плавности */
@@ -296,6 +299,7 @@ cursor: pointer;
     grid-row:  1 / span 2;
 
     picture img {
+        width: 295px;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
@@ -386,8 +390,9 @@ cursor: pointer;
     }
 
     picture img {
-        right: -71px;
-        bottom: -54px;
+        width: 210px;
+        right: 0;
+        bottom: 0;
     }
 }
 
@@ -481,9 +486,11 @@ cursor: pointer;
         max-width: 200px;
     }
 
-    img {
-        top: 133px;
-        right: -38px;
+    picture img{
+        width: 256px;
+        top: auto;
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -502,9 +509,10 @@ cursor: pointer;
         color: white;
     }
 
-    img {
-        right: 0;
-        bottom: 0;
+    picture img {
+        width: 179px;
+        right: 8px;
+        bottom: 8px;
     }
 }
 
@@ -522,10 +530,11 @@ cursor: pointer;
         color: white;
     }
 
-    img {
+    picture img {
+        width: 180px;
         left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        top: 225px;
+        transform: translateX(-50%);
     }
 }
 
@@ -541,7 +550,8 @@ cursor: pointer;
         max-width: 233px;
     }
 
-    img {
+    picture img {
+        width: 100%;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -559,7 +569,8 @@ cursor: pointer;
         max-width: 173px;
     }
 
-    img {
+    picture img {
+        width: 139px;
         right: 10px;
         bottom: 10px;
     }
@@ -582,7 +593,8 @@ cursor: pointer;
 
     }
 
-    img {
+    picture img {
+        width: 205px;
         right: 10px;
         bottom: 10px;
     }
@@ -606,7 +618,8 @@ cursor: pointer;
 
     }
 
-    img {
+    picture img {
+        width: 204px;
         right: 10px;
         bottom: 10px;
     }
@@ -633,6 +646,40 @@ cursor: pointer;
     display: none;
 }
 
+/* Анимация */
+/* Анимация вылета снизу */
+@keyframes flyInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Изначальное состояние - полностью скрыто */
+.parts-list > div {
+    opacity: 0;
+    transform: translateY(100px); /* Начальная позиция - ниже на 100px */
+    will-change: transform, opacity; /* Оптимизация анимации */
+}
+
+/* Активированная анимация */
+.parts-list.animate > div {
+    animation: flyInFromBottom 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Задержки для последовательного появления */
+.parts-list.animate .parts-item-1 { animation-delay: 0.2s; }
+.parts-list.animate .parts-item-2 { animation-delay: 0.4s; }
+.parts-list.animate .parts-item-3 { animation-delay: 0.6s; }
+.parts-list.animate .parts-item-4 { animation-delay: 0.8s; }
+.parts-list.animate .parts-item-5 { animation-delay: 1.0s; }
+.parts-list.animate .parts-item-6 { animation-delay: 1.2s; }
+.parts-list.animate .parts-item-7 { animation-delay: 1.4s; }
+
 /*calculator*/
 
 .calculator {
@@ -657,8 +704,9 @@ cursor: pointer;
 }
 
 .calculator-images1 {
+    height: 100%;
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3;
@@ -845,10 +893,13 @@ cursor: pointer;
             left: 50px;
         }
 
-        .services-list__img1 {
+        .services-list__img1 img{
+            width: 113px;
+            right: 0;
             position: absolute;
-            top: 141px;
-            left: 145px;
+            top: auto;
+            bottom: 0;
+            left: auto;
             z-index: 3;
 
         }
@@ -931,6 +982,7 @@ cursor: pointer;
     color: #5b99ff;
     border-radius: 27px;
     background: linear-gradient(92deg, #f0f9ff 0%, #fff 100%);
+    transition: all 0.3s ease;
 }
 
 .services-list__link:hover {
@@ -1380,7 +1432,7 @@ gap: 15px;
     letter-spacing: -0.02em;
     text-align: center;
     color: #fff;
-    padding: 14px 41px;
+    padding: 14px 35px 14px 40px;
     border-radius: 27px;
     background: linear-gradient(90deg, #487eff 0%, #3c75ff 100%);
     border: none;
@@ -1389,10 +1441,12 @@ gap: 15px;
     display: flex;
     gap: 10px;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .contacts-button:hover {
     gap: 15px;
+    padding: 14px 30px 14px 40px;
 }
 
 .contacts-text {
@@ -1576,6 +1630,11 @@ gap: 15px;
             line-height: 110%;
             letter-spacing: -0.02em;
             color: #022860;
+            transition: all 0.3s ease;
+        }
+
+        li a:hover {
+            color: #5B99FF;
         }
 
     }
@@ -1819,9 +1878,10 @@ gap: 15px;
         grid-row:  1;
 
         picture img {
+            width: 138px;
             bottom: 0;
             left: auto;
-            right: 0;
+            right: 11px;
             transform: none;
         }
 
@@ -1906,6 +1966,7 @@ gap: 15px;
         }
 
         picture img {
+            width: 170px;
             right: 0;
             bottom: 0;
         }
@@ -1938,9 +1999,10 @@ gap: 15px;
             max-width: 178px;
         }
 
-        img {
-            top: 108px;
-            right: -5px;
+        picture img {
+            width: 136px;
+            bottom: 0;
+            right: 0;
         }
     }
 
@@ -1953,9 +2015,10 @@ gap: 15px;
             max-width: 192px;
         }
 
-        img {
-            right: 0;
-            bottom: 0;
+        picture img {
+            width: 145px;
+            /*right: 0;*/
+            /*bottom: 0;*/
         }
 
         a {
@@ -1973,12 +2036,13 @@ gap: 15px;
             max-width: 233px;
         }
 
-        img {
+        picture img {
+            width: 108px;
             left: auto;
             right: 15px;
             top: auto;
             transform: none;
-            bottom: 15px;
+            bottom: 10px;
         }
 
         a {
@@ -1995,7 +2059,7 @@ gap: 15px;
             max-width: 218px;
         }
 
-        img {
+        picture img {
             left: auto;
             right: 0;
             top: auto;
@@ -2012,7 +2076,8 @@ gap: 15px;
             max-width: 164px;
         }
 
-        img {
+        picture img {
+            width: 131px;
             right: 15px;
             bottom: 15px;
         }
@@ -2022,7 +2087,8 @@ gap: 15px;
         grid-column: 2;
         grid-row: 3;
 
-        img {
+        picture img {
+            width: 189px;
             right: 15px;
             bottom: 15px;
         }
@@ -2041,7 +2107,8 @@ gap: 15px;
 
         }
 
-        img {
+        picture img {
+            width: 172px;
             right: 50px;
             bottom: 50%;
             transform: translateY(50%);
@@ -2198,9 +2265,10 @@ gap: 15px;
 
             .services-list__img1 {
                 position: absolute;
-                top: 117px;
+                top: auto;
+                bottom: 0;
                 left: auto;
-                right: -2px;
+                right: 9px;
                 z-index: 3;
 
             }
@@ -2709,6 +2777,7 @@ gap: 15px;
 
     .info-item-1 {
         picture img {
+            width: 99px;
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -2776,6 +2845,7 @@ gap: 15px;
         }
 
         picture img {
+            width: 130px;
             right: 0;
             bottom: 0;
         }
@@ -2810,8 +2880,9 @@ gap: 15px;
         }
 
         picture img {
-            top: 41px;
-            right: -23px;
+            width: 118px;
+            top: auto;
+            right: 0;
         }
     }
 
@@ -2820,6 +2891,7 @@ gap: 15px;
         grid-row: 2;
 
         picture img {
+            width: 119px;
             right: 10px;
             bottom: 10px;
         }
@@ -2836,9 +2908,10 @@ gap: 15px;
         }
 
         picture img {
+            width: 90px;
             left: auto;
             right: 16px;
-            top: 40px;
+            top: 50px;
             bottom: auto;
         }
     }
@@ -2853,6 +2926,8 @@ gap: 15px;
         }
 
         picture img {
+            width: auto;
+            height: 100%;
             left: auto;
             right: 0;
             top: auto;
@@ -2873,11 +2948,22 @@ gap: 15px;
             max-width: 144px;
         }
 
+        picture img {
+            width: 115px;
+            bottom: 10px;
+        }
+
     }
 
     .parts-item-6 {
         grid-column: 1;
         grid-row: 6;
+
+        picture img {
+            width: 159px;
+            right: 10px;
+            bottom: 10px;
+        }
     }
 
     .parts-item-7 {
@@ -2885,6 +2971,7 @@ gap: 15px;
         grid-row: 7;
 
         picture img {
+            width: 102px;
             right: 10px;
             bottom: 10px;
             transform: none;
@@ -3064,7 +3151,8 @@ gap: 15px;
                 position: absolute;
                 top: 48px;
                 left: auto;
-                right: -38px;
+                width: 87px;
+                right: 8px;
                 z-index: 3;
 
             }
