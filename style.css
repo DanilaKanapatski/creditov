@@ -319,6 +319,7 @@ cursor: pointer;
     }
 
     picture img {
+        width: 367px;
         top: 210px;
         left: 50%;
         transform: translateX(-50%);
@@ -326,6 +327,7 @@ cursor: pointer;
     }
 
     picture:nth-child(3) img {
+        width: 100%;
         top: auto;
         bottom: 47px;
         left: 50%;
@@ -346,11 +348,13 @@ cursor: pointer;
     }
 
     picture img {
-        bottom: -20px;
-        right: -65px;
+        width: 373px;
+        bottom: 0;
+        right: 0;
     }
 
     picture:nth-child(3) img {
+        width: 246px;
        left: 305px;
         right: auto;
         bottom: 0;
@@ -372,6 +376,7 @@ cursor: pointer;
     }
 
     picture img {
+        width: 100%;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
@@ -1077,6 +1082,17 @@ gap: 15px;
         border-radius: 12px;
         background: #f6fbff;
         width: 483px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    /* Анимация появления */
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     li:nth-child(2) {
@@ -1129,40 +1145,82 @@ gap: 15px;
     align-items: center;
     justify-content: center;
     gap: 20px;
+}
 
-    li {
-        max-width: 322px;
+/* Общие стили для всех элементов списка */
+.about-list li {
+    max-width: 322px;
+    width: 100%;
+    border: 1px solid #e4f4ff;
+    border-radius: 30px;
+    height: 420px;
+    padding: 50px 30px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0; /* Начальная прозрачность */
+
+    img {
         width: 100%;
-        border: 1px solid #e4f4ff;
-        border-radius: 30px;
-        height: 420px;
-        padding: 50px 30px;
-        position: relative;
-        overflow: hidden;
-
-        img {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-        }
+        position: absolute;
+        bottom: 0;
+        left: 0;
     }
 }
 
-.about-list li:nth-child(1) {
-    box-shadow: 0 0 20px 0 rgba(74, 122, 178, 0.2);
-    background: linear-gradient(134deg, #489afd 0%, #7326f1 100%), linear-gradient(138deg, #37b3fb 0%, #66e1ff 100%);
+/* Центральный элемент (появляется первым) */
+.about-list li:nth-child(2) {
+    height: 460px;
+    transform: translateY(30px); /* Начальное смещение вниз */
+}
 
+/* Левый элемент (выезжает слева) */
+.about-list li:nth-child(1) {
+    transform: translateX(-100px) translateY(30px); /* Скрыт слева */
+}
+
+/* Правый элемент (выезжает справа) */
+.about-list li:nth-child(3) {
+    transform: translateX(100px) translateY(30px); /* Скрыт справа */
+}
+
+/* Анимация появления центрального элемента */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация выезда левого элемента */
+@keyframes slideInFromLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Анимация выезда правого элемента */
+@keyframes slideInFromRight {
+    to {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+    }
+}
+
+/* Градиенты и тени (оставляем ваши стили) */
+.about-list li:nth-child(1) {
+    background: linear-gradient(134deg, #489afd 0%, #7326f1 100%);
+    box-shadow: 0 0 20px 0 rgba(74, 122, 178, 0.2);
 }
 
 .about-list li:nth-child(2) {
-    height: 460px;
+    background: linear-gradient(134deg, #489afd 0%, #7326f1 100%);
     box-shadow: 0 0 20px 0 rgba(74, 122, 178, 0.2);
-    background: linear-gradient(134deg, #489afd 0%, #7326f1 100%), linear-gradient(138deg, #37b3fb 0%, #66e1ff 100%);
 }
 
 .about-list li:nth-child(3) {
-    box-shadow: 0 0 20px 0 rgba(74, 122, 178, 0.2);
     background: linear-gradient(180deg, #487eff 0%, #6bb0ff 100%);
+    box-shadow: 0 0 20px 0 rgba(74, 122, 178, 0.2);
 }
 
 .about-list__desc {
@@ -1715,6 +1773,10 @@ gap: 15px;
         transition: background 0.3s ease; /* Для плавного затемнения хедера */
     }
 
+    .header-mob.header-scrolled {
+        background-color: white; /* Белый фон при скролле */
+    }
+
     .header-mob__wrapper {
         display: flex;
         gap: 10px;
@@ -1808,15 +1870,20 @@ gap: 15px;
     .main-left {
         position: absolute;
         left: 0;
-        top: 17px;
-        height: 100%;
+        top: 0;
+        height: 416px;
+
+        img {
+            height: 416px;
+
+        }
 
     }
 
     .main-right {
         position: absolute;
         right: 0;
-        top: 17px;
+        top: 0;
         height: 100%;
         z-index: 1;
     }
@@ -1895,6 +1962,7 @@ gap: 15px;
         grid-row:  1;
 
         picture img {
+            width: 245px;
             top: 123px;
             left: 50%;
             transform: translateX(-50%);
@@ -1902,6 +1970,7 @@ gap: 15px;
         }
 
         picture:nth-child(3) img {
+            width: 100%;
             top: 0;
             bottom: auto;
             left: 50%;
@@ -1932,6 +2001,7 @@ gap: 15px;
         }
 
         picture:nth-child(3) img {
+            width: 200px;
             left: 223px;
             right: auto;
             bottom: -78px;
@@ -1952,8 +2022,9 @@ gap: 15px;
 
         picture img {
             left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+            top: auto;
+            bottom: 0;
+            transform: translateX(-50%);
         }
     }
 
@@ -2794,6 +2865,7 @@ gap: 15px;
         grid-row:  1;
 
         picture img {
+            width: 155px;
             top: 153px;
         }
 
@@ -2809,14 +2881,16 @@ gap: 15px;
         }
 
         picture img {
+            width: 227px;
             bottom: auto;
-            right: -45px;
+            right: 0;
             top: 69px;
             transform: none;
             left: auto;
         }
 
         picture:nth-child(3) img {
+            width: 100px;
             left: 103px;
             right: auto;
             bottom: 0;
@@ -3293,12 +3367,24 @@ gap: 15px;
             height: 250px;
             position: relative;
             border: 1px solid #e4f4ff;
+            overflow: hidden;
+            opacity: 0; /* Начальная прозрачность */
+            transform: translateY(30px); /* Смещение вниз */
+            transition: opacity 0.6s ease, transform 0.6s ease;
 
             img {
                 position: absolute;
                 bottom: 0;
                 left: 0;
                 width: 100%;
+            }
+        }
+
+        /* Анимация появления */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
