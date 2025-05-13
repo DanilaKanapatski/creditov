@@ -2746,9 +2746,11 @@ gap: 15px;
     }
 
     .header-mob {
-        max-width: 350px;
-        border-radius: 10px;
+        max-width: 390px;
+        border-radius: 0;
+        top: 0;
         padding: 10px;
+        background: white;
     }
 
     .header-mob__wrapper a:nth-child(1) {

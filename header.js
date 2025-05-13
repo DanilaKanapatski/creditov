@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const burger = document.querySelector('.header-mob__burger');
     const body = document.body;
-    const header = document.querySelector('.header-mob'); // Предполагается, что у вас есть класс .header у вашего хедера
+    const header = document.querySelector('.header-mob');
+    const menuLinks = document.querySelectorAll('.header-mob a[href^="#"]'); // Все якорные ссылки в хедере
 
     // Обработчик для бургер-меню
     burger.addEventListener('click', function(e) {
@@ -14,12 +15,19 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.remove('menu-open');
     });
 
+    // Закрытие меню при клике на якорную ссылку
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            body.classList.remove('menu-open');
+        });
+    });
+
     // Обработчик скролла
     window.addEventListener('scroll', function() {
         if (window.scrollY > 0) {
-            header.classList.add('header-scrolled'); // Добавляем класс при скролле
+            header.classList.add('header-scrolled');
         } else {
-            header.classList.remove('header-scrolled'); // Убираем класс, когда страница вверху
+            header.classList.remove('header-scrolled');
         }
     });
 });
