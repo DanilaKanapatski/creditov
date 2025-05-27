@@ -2725,6 +2725,7 @@ gap: 15px;
     }
 
     .cases-wrapper {
+        margin-top: 0;
         display: flex;
         transition: transform 0.5s ease;
     }
@@ -3773,6 +3774,10 @@ gap: 15px;
         letter-spacing: -0.02em;
         color: #022860;
         margin-top: 20px;
+    }
+
+    .cases-wrapper {
+        margin-top: 0;
     }
 
     .cases-popup__list {

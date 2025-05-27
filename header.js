@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const slider = document.querySelector('.cases-wrapper');
     const prevBtn = document.querySelector('.cases-btn__prev');
     const nextBtn = document.querySelector('.cases-btn__next');
-    const cases = document.querySelectorAll('.case');
+    const cases = document.querySelectorAll('.cases-slider-container .case');
     const caseWidth = 362;
     const gap = 20;
     const visibleCases = 4;
